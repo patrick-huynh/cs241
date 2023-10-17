@@ -1,0 +1,4 @@
+int wain(int* a, int b) {
+  while(a > 241) {}
+  return 0;
+}

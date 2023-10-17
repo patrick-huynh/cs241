@@ -1,0 +1,1 @@
+beq $15, $15, 0xffffffffffffffff

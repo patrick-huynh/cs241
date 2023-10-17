@@ -1,0 +1,7 @@
+int wain(int* a, int b) {
+  int* mid = NULL;
+  int* end = NULL;
+  mid = a+b/2;
+  end = a+b;
+  return (mid-a)+(end-mid);
+}

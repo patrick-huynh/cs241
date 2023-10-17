@@ -1,0 +1,346 @@
+start BOF procedures EOF
+BOF BOF
+procedures procedure procedures
+procedure INT ID LPAREN params RPAREN LBRACE dcls statements RETURN expr SEMI RBRACE
+INT int
+ID eat
+LPAREN (
+params paramlist
+paramlist dcl
+dcl type ID
+type INT STAR
+INT int
+STAR *
+ID food : int*
+RPAREN )
+LBRACE {
+dcls .EMPTY
+statements .EMPTY
+RETURN return
+expr term : int
+term factor : int
+factor NUM : int
+NUM 241 : int
+SEMI ;
+RBRACE }
+procedures procedure procedures
+procedure INT ID LPAREN params RPAREN LBRACE dcls statements RETURN expr SEMI RBRACE
+INT int
+ID p
+LPAREN (
+params paramlist
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT
+INT int
+ID p : int
+COMMA ,
+paramlist dcl
+dcl type ID
+type INT STAR
+INT int
+STAR *
+ID q : int*
+RPAREN )
+LBRACE {
+dcls dcls dcl BECOMES NUM SEMI
+dcls .EMPTY
+dcl type ID
+type INT
+INT int
+ID r : int
+BECOMES =
+NUM 241 : int
+SEMI ;
+statements .EMPTY
+RETURN return
+expr term : int
+term factor : int
+factor ID LPAREN arglist RPAREN : int
+ID eat
+LPAREN (
+arglist expr
+expr term : int*
+term factor : int*
+factor ID : int*
+ID q : int*
+RPAREN )
+SEMI ;
+RBRACE }
+procedures procedure procedures
+procedure INT ID LPAREN params RPAREN LBRACE dcls statements RETURN expr SEMI RBRACE
+INT int
+ID q
+LPAREN (
+params paramlist
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT STAR
+INT int
+STAR *
+ID q : int*
+COMMA ,
+paramlist dcl
+dcl type ID
+type INT
+INT int
+ID r : int
+RPAREN )
+LBRACE {
+dcls .EMPTY
+statements .EMPTY
+RETURN return
+expr term : int
+term factor : int
+factor ID LPAREN arglist RPAREN : int
+ID p
+LPAREN (
+arglist expr COMMA arglist
+expr term : int
+term factor : int
+factor ID LPAREN arglist RPAREN : int
+ID eat
+LPAREN (
+arglist expr
+expr term : int*
+term factor : int*
+factor ID : int*
+ID q : int*
+RPAREN )
+COMMA ,
+arglist expr
+expr term : int*
+term factor : int*
+factor ID : int*
+ID q : int*
+RPAREN )
+SEMI ;
+RBRACE }
+procedures procedure procedures
+procedure INT ID LPAREN params RPAREN LBRACE dcls statements RETURN expr SEMI RBRACE
+INT int
+ID r
+LPAREN (
+params paramlist
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT
+INT int
+ID a : int
+COMMA ,
+paramlist dcl
+dcl type ID
+type INT
+INT int
+ID b : int
+RPAREN )
+LBRACE {
+dcls dcls dcl BECOMES NULL SEMI
+dcls dcls dcl BECOMES NUM SEMI
+dcls dcls dcl BECOMES NUM SEMI
+dcls .EMPTY
+dcl type ID
+type INT
+INT int
+ID p : int
+BECOMES =
+NUM 241 : int
+SEMI ;
+dcl type ID
+type INT
+INT int
+ID q : int
+BECOMES =
+NUM 241 : int
+SEMI ;
+dcl type ID
+type INT STAR
+INT int
+STAR *
+ID n : int*
+BECOMES =
+NULL NULL : int*
+SEMI ;
+statements .EMPTY
+RETURN return
+expr term : int
+term factor : int
+factor ID LPAREN arglist RPAREN : int
+ID r
+LPAREN (
+arglist expr COMMA arglist
+expr term : int
+term factor : int
+factor ID : int
+ID p : int
+COMMA ,
+arglist expr
+expr term : int
+term factor : int
+factor ID LPAREN arglist RPAREN : int
+ID eat
+LPAREN (
+arglist expr
+expr term : int*
+term factor : int*
+factor ID : int*
+ID n : int*
+RPAREN )
+RPAREN )
+SEMI ;
+RBRACE }
+procedures procedure procedures
+procedure INT ID LPAREN params RPAREN LBRACE dcls statements RETURN expr SEMI RBRACE
+INT int
+ID loong
+LPAREN (
+params paramlist
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT
+INT int
+ID a : int
+COMMA ,
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT
+INT int
+ID b : int
+COMMA ,
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT
+INT int
+ID c : int
+COMMA ,
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT
+INT int
+ID d : int
+COMMA ,
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT
+INT int
+ID e : int
+COMMA ,
+paramlist dcl
+dcl type ID
+type INT
+INT int
+ID f : int
+RPAREN )
+LBRACE {
+dcls .EMPTY
+statements .EMPTY
+RETURN return
+expr term : int
+term factor : int
+factor NUM : int
+NUM 0 : int
+SEMI ;
+RBRACE }
+procedures main
+main INT WAIN LPAREN dcl COMMA dcl RPAREN LBRACE dcls statements RETURN expr SEMI RBRACE
+INT int
+WAIN wain
+LPAREN (
+dcl type ID
+type INT STAR
+INT int
+STAR *
+ID a : int*
+COMMA ,
+dcl type ID
+type INT
+INT int
+ID b : int
+RPAREN )
+LBRACE {
+dcls .EMPTY
+statements .EMPTY
+RETURN return
+expr term : int
+term factor : int
+factor ID LPAREN arglist RPAREN : int
+ID r
+LPAREN (
+arglist expr COMMA arglist
+expr term : int
+term factor : int
+factor ID LPAREN arglist RPAREN : int
+ID q
+LPAREN (
+arglist expr COMMA arglist
+expr term : int*
+term factor : int*
+factor ID : int*
+ID a : int*
+COMMA ,
+arglist expr
+expr term : int
+term factor : int
+factor ID LPAREN arglist RPAREN : int
+ID p
+LPAREN (
+arglist expr COMMA arglist
+expr term : int
+term factor : int
+factor ID : int
+ID b : int
+COMMA ,
+arglist expr
+expr term : int*
+term factor : int*
+factor ID : int*
+ID a : int*
+RPAREN )
+RPAREN )
+COMMA ,
+arglist expr
+expr term : int
+term factor : int
+factor ID LPAREN arglist RPAREN : int
+ID loong
+LPAREN (
+arglist expr COMMA arglist
+expr term : int
+term factor : int
+factor NUM : int
+NUM 1 : int
+COMMA ,
+arglist expr COMMA arglist
+expr term : int
+term factor : int
+factor NUM : int
+NUM 2 : int
+COMMA ,
+arglist expr COMMA arglist
+expr term : int
+term factor : int
+factor NUM : int
+NUM 3 : int
+COMMA ,
+arglist expr COMMA arglist
+expr term : int
+term factor : int
+factor NUM : int
+NUM 4 : int
+COMMA ,
+arglist expr COMMA arglist
+expr term : int
+term factor : int
+factor NUM : int
+NUM 5 : int
+COMMA ,
+arglist expr
+expr term : int
+term factor : int
+factor NUM : int
+NUM 6 : int
+RPAREN )
+RPAREN )
+SEMI ;
+RBRACE }
+EOF EOF

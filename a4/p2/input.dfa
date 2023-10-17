@@ -1,0 +1,27 @@
+.ALPHABET
+a l f
+.STATES
+start
+a1
+l1
+f1
+a2
+l2
+f2
+a3!
+.TRANSITIONS
+start a a1
+a1      l       l1
+l1      f       f1
+f1      a       a2
+a2      l       l2
+l2      f       f2
+f2      a       a3
+a3	a l f	a3
+.INPUT
+.EMPTY
+alfalfa
+alfalfaalf
+aalfalfalf
+alfalff
+alfaalf

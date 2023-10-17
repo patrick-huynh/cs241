@@ -1,0 +1,122 @@
+int abs(int n) {
+    int result = 0;
+    if (n < result) {
+        result = (result - 1) * n;
+    } else {
+        result = n;
+    }
+    return result;
+}
+
+int tieBreak(int a, int b) {
+    int output = 0;
+    a = abs(a);
+    b = abs(b);
+    if (a < b) {
+        output = a;
+    } else {}
+    if (a > b) {
+        output = b;
+    } else {}
+    if (a == b) {
+        output = (1 - 2) * b;
+    } else {}
+    return output;
+}
+
+
+// Assumes size at at least 1
+int maxOfArray(int *arr, int size) {
+    int i = 0;
+    int max = 0;
+    max = abs(*(arr));
+    while(i < size) {
+        if (abs(*(arr + i)) > max) {
+            max = abs(*(arr + i));
+        } else {}
+        i = i + 1;
+    }
+    return max;
+}
+
+int populate(int* a, int aSize, int* count, int* negCount, int countSize) {
+    int i = 0;
+    int num = 0;
+    while (i < aSize) {
+        *(count + num) = 0;
+        *(negCount + num) = 0;
+        i = i+1;
+    }
+
+    i = 0;
+    while (i < aSize) {
+        num = *(a + i);
+        if (num >= 0) {
+            *(count + num) = *(count + num) + 1;
+        } else {
+            num = abs(num);
+            *(negCount + num) = *(negCount + num) + 1;
+        }
+        i = i+1;
+    }
+    return 0;
+}
+
+int findMode(int* a, int aSize, int* count, int* negCount, int countSize) {
+    int mode = 0;
+    int i = 0;
+    int modeFreq = 0;
+    int curFreq = 0;
+    int aVal = 0;
+
+    mode = *a; // set mode to be the first
+    if (mode >= 0) {
+        modeFreq = *(count + mode);
+    } else {
+        modeFreq = *(negCount + abs(mode));
+    }
+    
+    while (i < aSize) {
+        aVal = *(a + i);
+        if (aVal >= 0) {
+            curFreq = *(count + aVal);
+        } else {
+            curFreq = *(negCount + abs(aVal));
+        }
+        
+        if (mode != aVal) {
+            if (curFreq > modeFreq) {
+                mode = aVal;
+                modeFreq = curFreq;
+                curFreq = modeFreq - 1; // change it so the next if loop doesn't run
+            } else {}
+            if (curFreq == modeFreq) {
+                mode = tieBreak(mode, aVal);
+                if (mode >= 0) {
+                    modeFreq = *(count + mode); 
+                } else {
+                    modeFreq = *(negCount + abs(mode));
+                }
+            } else {}
+        } else {}
+        i = i + 1;
+    }
+    return mode;
+}
+
+int wain(int* a, int b) {
+    int i = 0;
+    int maxVal = 0;
+    int* count = NULL;
+    int* negCount = NULL;
+    int output = 0;
+    int garbage = 0;
+
+    maxVal = maxOfArray(a, b);
+    count = new int[maxVal];
+    negCount = new int[maxVal];
+    garbage = populate(a, b, count, negCount, maxVal);
+    output = findMode(a, b, count, negCount, maxVal);
+    delete [] count;
+    return output;
+}

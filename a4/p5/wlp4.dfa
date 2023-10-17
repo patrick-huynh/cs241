@@ -1,0 +1,126 @@
+.ALPHABET
+a-z A-Z 0-9 ! = , ( ) [ ] { } + - / * < > & ; %
+.STATES
+start
+
+id!
+num!
+comment!
+
+lParen!
+rParen!
+lBrace!
+rBrace!
+lBrack!
+rBrack!
+
+return1
+return2
+return3
+return4
+return4
+return5
+return!
+
+if1
+if!
+
+else1
+else2
+else3
+else!
+
+while1
+while2
+while3
+while4
+while!
+
+print1
+print2
+print3
+print4
+print5
+print6
+print!
+
+wain1
+wain2
+wain3
+wain!
+
+becomes!
+
+int1
+int2
+int!
+
+eq1
+eq!
+ne1
+ne!
+lt!
+gt!
+le1
+le!
+ge1
+ge!
+
+plus!
+minus!
+star!
+slash!
+pct!
+comma!
+semi!
+
+new1
+new2
+new!
+
+delete1
+delete2
+delete3
+delete4
+delete5
+delete!
+
+amp!
+
+null1
+null2
+null3
+null!
+
+
+.TRANSITIONS
+start A-Z a-z id
+id A-Z a-z 0-9 id
+start 0-9 num
+num 0-9 num
+start ( lParen
+start ) rParen
+start { lBrace
+start } rBrace
+start [ lBrack
+start ] rBrack
+start = becomes
+becomes = eq
+start ! ne1
+ne1 = ne
+start < lt
+start > gt
+lt = le
+gt = ge
+start + plus
+start - minus
+start * star
+start / slash
+start % pct
+start , comma
+start ; semi
+start & amp
+slash / comment
+comment a-z A-Z 0-9 ! = , ( ) [ ] { } + - / * < > & ; % comment
+.INPUT
+a+b

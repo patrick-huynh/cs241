@@ -1,0 +1,9 @@
+.word 2
+.word 241
+.word -1
+.word 0
+.word 1
+.word -2147483648
+.word 2147483647
+.word 0xffffffff
+.word 0xf1

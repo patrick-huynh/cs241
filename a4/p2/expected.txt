@@ -1,0 +1,6 @@
+.EMPTY false
+alfalfa true
+alfalfaalf true
+aalfalfalf false
+alfalff false
+alfaalf false

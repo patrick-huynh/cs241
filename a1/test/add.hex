@@ -1,0 +1,6 @@
+.word 0x00004014 ; lis $8
+.word 0x0000000B ; .word 11
+.word 0x00004814 ; lis $9
+.word 0x0000000D ; .word 13
+.word 0x01091820 ; add $3, $8, $9
+.word 0x03E00008 ; jr $31

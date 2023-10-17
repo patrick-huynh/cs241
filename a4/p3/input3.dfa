@@ -1,0 +1,7 @@
+.ALPHABET
+a-z A-Z !
+.STATES
+start
+.TRANSITIONS
+.INPUT
+F

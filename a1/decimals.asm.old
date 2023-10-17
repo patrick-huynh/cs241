@@ -1,0 +1,93 @@
+lis $1 ; stdin address
+.word 0xffff0004
+lis $2
+.word 0xffff000c ; stdout address
+
+; Constants
+lis $20 ; $20 = 10 = "line feed"
+.word 10
+lis $21 ; $21 = 45 = '-' ascii for dash
+.word 45
+lis $4
+.word 48 ; ascii value for '0' 
+lis $6
+.word -1
+lis $7 ; $7 = 2
+.word 2
+lis $8 ; $8 = 1
+.word 1
+add $5. $0, $0 ; $5 = 1, if input is neg, else 0 
+
+add $15, $0, $0 ; $15 = 0
+
+; Body
+; Reads input and stores integer value in $15
+read:
+lw $10, 0($1) ; reading input
+beq $10, $6, doneread ; if eof, go to doneread
+beq $10, $20, doneread ; if line feed go to doneread
+bne $21, $10, sikipneg ; checks if the first input is '-'
+add $5, $8, $0 ; $5 = 1, if input is neg
+beq $0, $0, read ; go back to read
+
+skipneg:
+sub $10, $10, $4 ; convert ascii to int
+multu $15, $20 ; multiplies $15 by 10 for every iteration
+mflo $15
+add $15, $15, $10 ; add the new int to total val
+beq $0, $0, read ; go back to read
+
+doneread:
+; Now uses the dividing method to determine binay output
+; Checks if val is negative if $5 = 1
+
+sw $31, -4($30)
+lis $31
+.word 4
+sub $30, $30, $31
+
+lis $29
+.word convert
+jalr $29
+; start function
+convert:
+; preserve 28
+sw $28, -4($30) ; preserving $28
+lis $28
+.word 4
+sub $30, $30, $28
+
+; body function
+divu $15, $7;
+mfhi $28 ; remainder of the division, or the bit
+mflo $15 ; quotient
+
+checkflip: 
+beq $28, $8, is1 ; change the negative counter
+beq $28, $0, is0 ; flip the bit
+
+is1:
+sub $5, $5, $5; forces $5=0
+
+is0:
+add $28, $28, $8 ; flip 0 to 1
+
+
+
+
+write:
+sw 0($2 ; send bit to output
+
+lis $28 ; restoring $28
+.word 4
+add $30, $30, $28
+lw $28, -4($30)
+jr $31
+; end func
+
+lis $31
+.word 4
+add $30, $30, $31
+lw $31, -4($30)
+
+jr $31

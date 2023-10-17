@@ -1,0 +1,21 @@
+. BOF ( ( ) ( ) ) ( ) EOF
+BOF . ( ( ) ( ) ) ( ) EOF
+BOF ( . ( ) ( ) ) ( ) EOF
+BOF ( ( . ) ( ) ) ( ) EOF
+BOF ( ( P . ) ( ) ) ( ) EOF
+BOF ( ( P ) . ( ) ) ( ) EOF
+BOF ( ( P ) ( . ) ) ( ) EOF
+BOF ( ( P ) ( P . ) ) ( ) EOF
+BOF ( ( P ) ( P ) . ) ( ) EOF
+BOF ( ( P ) ( P ) P . ) ( ) EOF
+BOF ( ( P ) P . ) ( ) EOF
+BOF ( P . ) ( ) EOF
+BOF ( P ) . ( ) EOF
+BOF ( P ) ( . ) EOF
+BOF ( P ) ( P . ) EOF
+BOF ( P ) ( P ) . EOF
+BOF ( P ) ( P ) P . EOF
+BOF ( P ) P . EOF
+BOF P . EOF
+BOF P EOF .
+S .

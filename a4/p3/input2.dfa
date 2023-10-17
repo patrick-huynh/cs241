@@ -1,0 +1,10 @@
+.ALPHABET
+$ 0-9
+.STATES
+start $ $n!
+.TRANSITIONS
+start $ $
+$  0-9 $n
+$n 0-9 $n
+.INPUT
+$2$384902843920$

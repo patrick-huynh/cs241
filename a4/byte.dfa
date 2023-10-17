@@ -1,0 +1,48 @@
+.ALPHABET
+0-9
+-
+.STATES
+start
+dig1!
+dig2!
+gdig1!
+gdig2!
+neg
+ndig1!
+gndig1!
+ndig2!
+gndig2!
+good!
+bad
+.TRANSITIONS
+start 0 good
+start 2 dig1
+start 1 gdig1
+dig1 5 dig2
+dig2 0-5 good
+start 3-9 gdig2
+gdig1 0-9 gdig2
+dig1 0-4 gdig2
+dig1 6-9 good
+gdig2 0-9 good
+start - neg
+neg 1 ndig1
+ndig1 2 ndig2
+ndig2 0-8 good
+neg 2-9 gndig1
+gndig1 0-9 good
+ndig1 0-1 gndig2
+ndig1 3-9 good
+gndig2 0-9 good
+good 0-9 bad
+.INPUT
+.EMPTY
+0 1 2 3 4 5 6 7 9 10 11
+-1 -2 -3 -4 -5 -6 -7 -8 -9 -10 -11
+255 254 99 245
+-128 -127 -99 -19
+256 999
+-129 -999 -190
+100
+-109
+300

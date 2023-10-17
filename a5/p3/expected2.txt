@@ -1,0 +1,17 @@
+. BOF id + # * id EOF
+BOF . id + # * id EOF
+BOF id . + # * id EOF
+BOF factor . + # * id EOF
+BOF term . + # * id EOF
+BOF expr . + # * id EOF
+BOF expr + . # * id EOF
+BOF expr + # . * id EOF
+BOF expr + factor . * id EOF
+BOF expr + term . * id EOF
+BOF expr + term * . id EOF
+BOF expr + term * id . EOF
+BOF expr + term * factor . EOF
+BOF expr + term . EOF
+BOF expr . EOF
+BOF expr EOF .
+S .
